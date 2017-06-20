@@ -126,22 +126,22 @@ if (isset($_POST["sb"])) {
                 <div class="hiddenform">
                     <input type="hidden" name="student" value="default" class="student">
                     <input type="checkbox" name="student" class="program" value="student"
-                    <?php if (isset($st) && $st === "Multimedia") { echo 'checked'; } ?>><label><i class="fa fa-gg" aria-hidden="true"></i> Student of Multimedia</label>
+                    <?php if (isset($st) && $st === "student" && !$success) { echo 'checked'; } ?>><label><i class="fa fa-gg" aria-hidden="true"></i> Student of Multimedia</label>
 
                     <div class="hide-info">
                         <section class="mr">
                             <p>Major in:</p>
                             <input type="hidden" name="major" value="default">
-                            <input type="radio" name="major" value="Web Scripting">Web Scripting
+                            <input type="radio" name="major" value="Web Scripting" <?php if (isset($mr) && $mr === "Web Scripting" && !$success) { echo 'checked'; } ?>>Web Scripting
                             <br>
-                            <input type="radio" name="major" value="Web Design">Web Design
+                            <input type="radio" name="major" value="Web Design" <?php if (isset($mr) && $mr === "Web Design" && !$success) { echo 'checked'; } ?>>Web Design
                         </section>
 
                         <section class="course">
                             <select name="course-load">
                                 <option value="default">Course Load</option>
-                                <option <?php if (isset($courseLoad) && $courseLoad === "Full-Time") { echo 'selected="true" '; } ?>>Full-Time</option>
-                                <option <?php if (isset($courseLoad) && $courseLoad === "Part-Time") { echo 'selected="true" '; } ?> >Part-Time</option>
+                                <option <?php if (isset($courseLoad) && $courseLoad === "Full-Time" && !$success) { echo 'selected="true" '; } ?>>Full-Time</option>
+                                <option <?php if (isset($courseLoad) && $courseLoad === "Part-Time" && !$success) { echo 'selected="true" '; } ?> >Part-Time</option>
                             </select>
                         </section>
                     </div>
